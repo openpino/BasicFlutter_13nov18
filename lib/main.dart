@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   var titleName = 'Basic Flutter';
   var messageString =
       'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of ';
-  var paddingDouble = 35.0;
+  var paddingDouble = 25.0;
 
   var friend1String = 'Doramon';
   var friend2String = 'Nopita';
