@@ -14,25 +14,53 @@ class MyApp extends StatelessWidget {
   var friend1String = 'Doramon';
   var friend2String = 'Nopita';
   var friend3String = 'Sunako';
-
+  var myFontSize = 25.0;
   @override
   Widget build(BuildContext context) {
-
     //DEmo Create Text Widget
-    Text friend1Text = new Text(friend1String);
-    Text friend2Text = new Text(friend2String);
-    Text friend3Text = new Text(friend3String);
+    Text friend1Text = new Text(
+      friend1String,
+      style: new TextStyle(
+          color: Colors.red[900],
+          fontSize: myFontSize,
+          fontWeight: FontWeight.bold,
+          fontStyle: FontStyle.italic),
+    );
+    Text friend2Text = new Text(
+      friend2String,
+      style: new TextStyle(
+          color: Colors.blue[900],
+          fontSize: myFontSize,
+          fontStyle: FontStyle.italic),
+    );
+    Text friend3Text = new Text(
+      friend3String,
+      style: new TextStyle(
+          color: Colors.green[700],
+          fontSize: myFontSize,
+          fontStyle: FontStyle.normal),
+    );
 
-   // Create widget for body
+    // Create widget for body
     Widget widgetTextMessage = new Container(
       padding: new EdgeInsets.all(paddingDouble),
       child: new Text(messageString),
     );
 
-    Widget widgetMyFriend = new Container(
+    Widget widgetMyFriend = new Container( padding: new EdgeInsets.all(paddingDouble),
       child: new Row(
-        children: <Widget>[friend1Text, friend2Text, friend3Text],
-      ),
+        children: <Widget>[
+          new Expanded(
+            child: friend1Text,
+          ),
+          new Expanded(
+            child: friend2Text,
+          ),
+          new Expanded(
+            child: friend3Text,
+          )
+        ],
+      ), color: Colors.yellow,
     );
 
     return new MaterialApp(
@@ -41,7 +69,7 @@ class MyApp extends StatelessWidget {
         appBar: new AppBar(
           title: new Text(titleName),
         ),
-        body: widgetMyFriend,
+        body: new Container(child: new Column(children: <Widget>[widgetMyFriend,widgetMyFriend,widgetTextMessage],),),
       ),
     );
   }
